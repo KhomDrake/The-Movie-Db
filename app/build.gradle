@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.example.themoviedb"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:${versions.appcompat}"
+    implementation "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}"
+    implementation "androidx.core:core-ktx:${versions.core_ktx}"
+    implementation "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
+    implementation "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+    implementation "androidx.lifecycle:lifecycle-extensions:${versions.lifecycle_extensions}"
+    implementation "androidx.annotation:annotation:${versions.annotation}"
+    implementation "androidx.room:room-coroutines:$versions.room_coroutines"
+    implementation "androidx.room:room-runtime:$versions.room"
+    implementation "androidx.recyclerview:recyclerview:${versions.recyclervuew}"
+    implementation "androidx.fragment:fragment:$versions.fragment"
+    implementation "androidx.work:work-runtime-ktx:${versions.work}"
+    kapt "androidx.room:room-compiler:$versions.room"
+    kapt "android.arch.persistence.room:compiler:$versions.room_compiler"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+    implementation "org.koin:koin-android:${versions.koin}"
+    implementation "org.koin:koin-androidx-viewmodel:${versions.koin}"
+
+    implementation "com.squareup.okhttp3:logging-interceptor:$versions.logging"
+    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${versions.converter_gson}"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${versions.retrofit_coroutines}"
+    implementation "com.github.bumptech.glide:glide:${versions.glide}"
+    implementation "com.facebook.shimmer:shimmer:${versions.shimmer}@aar"
+
+    implementation "de.hdodenhof:circleimageview:${versions.circleimageview}"
+}

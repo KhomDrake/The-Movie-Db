@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_cinema">
+
+    <fragment
+        android:id="@+id/navigation_cinema"
+        android:name="com.example.themoviedb.ui.movies.home.HomeMoviesFragment"
+        android:label="@string/title_movies"
+        tools:layout="@layout/fragment_home_movies" >
+        <action
+            android:id="@+id/action_navigation_cinema_to_movieDetailFragment"
+            app:destination="@id/movie_detail_fragment">
+            <argument
+                android:name="idMovie"
+                android:defaultValue="0"
+                app:nullable="false"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_tv"
+        android:name="com.example.themoviedb.ui.tv.home.HomeTvFragment"
+        android:label="@string/title_tv"
+        tools:layout="@layout/fragment_home_tv" >
+        <action
+            android:id="@+id/action_navigation_tv_to_tvDetailFragment"
+            app:destination="@id/tv_detail_fragment">
+            <argument
+                android:name="idTv"
+                android:defaultValue="0"
+                app:nullable="false"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_library"
+        android:name="com.example.themoviedb.ui.library.LibraryFragment"
+        android:label="@string/title_library"
+        tools:layout="@layout/fragment_library" >
+        <action
+            android:id="@+id/action_navigation_library_to_movieDetailFragment"
+            app:destination="@id/movie_detail_fragment">
+            <argument
+                android:name="idMovie"
+                android:defaultValue="0"
+                app:nullable="false"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_navigation_library_to_tvDetailFragment"
+            app:destination="@id/tv_detail_fragment">
+            <argument
+                android:name="idTv"
+                android:defaultValue="0"
+                app:argType="integer"
+                app:nullable="false" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/movie_detail_fragment"
+        android:name="com.example.themoviedb.ui.movies.detail.DetailMovieFragment"
+        android:label="MovieDetailFragment"
+        tools:layout="@layout/fragment_movie_detail">
+        <action
+            android:id="@+id/action_movieDetailFragment_self"
+            app:destination="@id/movie_detail_fragment">
+            <argument
+                android:name="idMovie"
+                android:defaultValue="0"
+                app:nullable="false"
+                app:argType="integer" />
+        </action>
+        <argument
+            android:name="idMovie"
+            android:defaultValue="0"
+            app:nullable="false"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tv_detail_fragment"
+        android:name="com.example.themoviedb.ui.tv.detail.DetailTvFragment"
+        android:label="TvDetailFragment"
+        tools:layout="@layout/fragment_tv_detail">
+        <action
+            android:id="@+id/action_tvDetailFragment_self"
+            app:destination="@id/tv_detail_fragment">
+            <argument
+                android:name="idTv"
+                android:defaultValue="0"
+                app:nullable="false"
+                app:argType="integer" />
+        </action>
+        <argument
+            android:name="idTv"
+            android:defaultValue="0"
+            app:nullable="false"
+            app:argType="integer" />
+    </fragment>
+</navigation>

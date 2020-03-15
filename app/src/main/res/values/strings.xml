@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">TheMovieDb</string>
+    <string name="title_movies">Movies</string>
+    <string name="title_tv">Tv</string>
+    <string name="title_library">Library</string>
+    <string name="try_again">Try Again</string>
+    <string name="title_latest">Latest</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="popular">Popular</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="no_reviews">No Reviews</string>
+    <string name="tv_airing_today">TV Airing Today</string>
+    <string name="want_watch">I Want to Watch</string>
+    <string name="wanting_watch">Wanting to Watch</string>
+    <string name="favor">Favor</string>
+    <string name="disfavor">Disfavor</string>
+    <string name="no_content_text_default">None</string>
+    <string name="no_content_text_seasons">No season</string>
+    <string name="no_content_text_shows_similar">No series/anime/cartoon similar</string>
+    <string name="no_content_text_shows">No series/anime/cartoon</string>
+    <string name="no_content_text_movies">No movie</string>
+    <string name="no_content_text_movies_similar">No movie similar</string>
+    <string name="no_content_text_wish_list">None on the Wanting to Watch list</string>
+    <string name="no_content_text_favorite_list">None Favorited</string>
+    <string name="tv_on_the_air">Tv On The Air</string>
+    <string name="similar_movies">Movies similar</string>
+    <string name="Cast">Cast</string>
+    <string name="shows_similar">Shows Similar</string>
+    <string name="seasons">Seasons</string>
+    <string name="description">Description</string>
+    <string name="no_cast">No Cast</string>
+    <string name="cast">Cast</string>
+</resources>
