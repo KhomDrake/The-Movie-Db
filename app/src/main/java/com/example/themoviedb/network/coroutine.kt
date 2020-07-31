@@ -14,7 +14,7 @@ fun <T> async(func: suspend () -> T) {
     scope.launch { func.invoke() }
 }
 
-fun <T> makeAsyncOperation(
+fun <T> coroutine(
     liveData: MutableStateLiveData<T> = MutableStateLiveData(),
     func: suspend () -> T
 ) : StateLiveData<T> {
@@ -31,7 +31,7 @@ fun <T> makeAsyncOperation(
     return liveData
 }
 
-fun makeAsyncOperation(func: suspend () -> Unit) {
+fun coroutine(func: suspend () -> Unit) {
     async {
         try {
             func.invoke()

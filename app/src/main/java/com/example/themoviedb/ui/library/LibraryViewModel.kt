@@ -3,7 +3,7 @@ package com.example.themoviedb.ui.library
 import androidx.lifecycle.ViewModel
 import com.example.themoviedb.common.livedata.MutableStateLiveData
 import com.example.themoviedb.common.livedata.StateLiveData
-import com.example.themoviedb.network.makeAsyncOperation
+import com.example.themoviedb.network.coroutine
 import com.example.themoviedb.models.application.ImageInfo
 import com.example.themoviedb.network.repository.LibraryRepository
 
@@ -19,11 +19,11 @@ class LibraryViewModel(private val libraryRepository: LibraryRepository) : ViewM
         get() = _wish
 
 
-    fun favorites() = makeAsyncOperation(_favorites) {
+    fun favorites() = coroutine(_favorites) {
         libraryRepository.favorites()
     }
 
-    fun wish() = makeAsyncOperation(_wish) {
+    fun wish() = coroutine(_wish) {
         libraryRepository.wish()
     }
 

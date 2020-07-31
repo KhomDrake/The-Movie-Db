@@ -3,7 +3,7 @@ package com.example.themoviedb.ui.tv.detail
 import androidx.lifecycle.ViewModel
 import com.example.themoviedb.common.livedata.MutableStateLiveData
 import com.example.themoviedb.common.livedata.StateLiveData
-import com.example.themoviedb.network.makeAsyncOperation
+import com.example.themoviedb.network.coroutine
 import com.example.themoviedb.extension.toTableFavorite
 import com.example.themoviedb.extension.toTableWish
 import com.example.themoviedb.models.ImageInfoType
@@ -47,39 +47,39 @@ class DetailTvViewModel(
         idTv = id
     }
 
-    fun insertWish(imageInfo: ImageInfo) = makeAsyncOperation {
+    fun insertWish(imageInfo: ImageInfo) = coroutine {
         libraryRepository.insertWish(imageInfo.toTableWish(ImageInfoType.TV))
     }
 
-    fun deleteWish() = makeAsyncOperation {
+    fun deleteWish() = coroutine {
         libraryRepository.deleteWish(idTv)
     }
 
-    fun insertFavorite(imageInfo: ImageInfo) = makeAsyncOperation {
+    fun insertFavorite(imageInfo: ImageInfo) = coroutine {
         libraryRepository.insertFavorite(imageInfo.toTableFavorite(ImageInfoType.TV))
     }
 
-    fun deleteFavorite() = makeAsyncOperation {
+    fun deleteFavorite() = coroutine {
         libraryRepository.deleteFavorite(idTv)
     }
 
-    fun isWish() = makeAsyncOperation(_wish) {
+    fun isWish() = coroutine(_wish) {
         libraryRepository.getWish(idTv).isNotEmpty()
     }
 
-    fun isFavorite() = makeAsyncOperation(_favorite) {
+    fun isFavorite() = coroutine(_favorite) {
         libraryRepository.getFavorite(idTv).isNotEmpty()
     }
 
-    fun tvDetail() = makeAsyncOperation(_tvDetail) {
+    fun tvDetail() = coroutine(_tvDetail) {
         tvRepository.tvDetail(idTv)
     }
 
-    fun castTv() = makeAsyncOperation(_cast) {
+    fun castTv() = coroutine(_cast) {
         tvRepository.castTv(idTv)
     }
 
-    fun similarTv() = makeAsyncOperation(_similarTvs) {
+    fun similarTv() = coroutine(_similarTvs) {
         tvRepository.similarTv(idTv)
     }
 

@@ -6,7 +6,9 @@
       <module fileurl="file://$PROJECT_DIR$/app/The-Movie-DB-2.0-app.iml" filepath="$PROJECT_DIR$/app/The-Movie-DB-2.0-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/The-Movie-Db-Meetup-TheMovieDb.iml" filepath="$PROJECT_DIR$/The-Movie-Db-Meetup-TheMovieDb.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/The-Movie-Db-Meetup-app.iml" filepath="$PROJECT_DIR$/app/The-Movie-Db-Meetup-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/The-Movie-Db-TheMovieDb.iml" filepath="$PROJECT_DIR$/.idea/modules/The-Movie-Db-TheMovieDb.iml" group="TheMovieDb" />
       <module fileurl="file://$PROJECT_DIR$/TheMovieDb.iml" filepath="$PROJECT_DIR$/TheMovieDb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/TheMovieDb-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/TheMovieDb-app.iml" group="TheMovieDb/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

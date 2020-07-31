@@ -3,7 +3,7 @@ package com.example.themoviedb.ui.tv.home
 import androidx.lifecycle.ViewModel
 import com.example.themoviedb.common.livedata.MutableStateLiveData
 import com.example.themoviedb.common.livedata.StateLiveData
-import com.example.themoviedb.network.makeAsyncOperation
+import com.example.themoviedb.network.coroutine
 import com.example.themoviedb.network.repository.TvRepository
 import com.example.themoviedb.models.Category
 import com.example.themoviedb.models.network.Result
@@ -40,24 +40,24 @@ class HomeTvViewModel(private val tvRepository: TvRepository) : ViewModel() {
         Category.NowPlaying -> tvAiringTodayTv()
     }
 
-    private fun latestTv() = makeAsyncOperation(_latest) {
+    private fun latestTv() = coroutine(_latest) {
         tvRepository.latestTv()
     }
 
     private fun tvAiringTodayTv() =
-        makeAsyncOperation(_tvAiringTodayTv) {
+        coroutine(_tvAiringTodayTv) {
             tvRepository.tvAiringTodayTv()
         }
 
-    private fun tvOnTheAirTv() = makeAsyncOperation(_tvOnTheAirTv) {
+    private fun tvOnTheAirTv() = coroutine(_tvOnTheAirTv) {
         tvRepository.tvOnTheAirTv()
     }
 
-    private fun popularTv() = makeAsyncOperation(_popular) {
+    private fun popularTv() = coroutine(_popular) {
         tvRepository.popularTv()
     }
 
-    private fun topRatedTv() = makeAsyncOperation(_topRated) {
+    private fun topRatedTv() = coroutine(_topRated) {
         tvRepository.topRatedTv()
     }
 }

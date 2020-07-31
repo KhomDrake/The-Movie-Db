@@ -3,7 +3,7 @@ package com.example.themoviedb.ui.movies.detail
 import androidx.lifecycle.ViewModel
 import com.example.themoviedb.common.livedata.MutableStateLiveData
 import com.example.themoviedb.common.livedata.StateLiveData
-import com.example.themoviedb.network.makeAsyncOperation
+import com.example.themoviedb.network.coroutine
 import com.example.themoviedb.extension.toTableFavorite
 import com.example.themoviedb.extension.toTableWish
 import com.example.themoviedb.models.ImageInfoType
@@ -47,39 +47,39 @@ class DetailMoviesViewModel(
         idMovie = id
     }
 
-    fun movieDetail() = makeAsyncOperation(_movieDetail) {
+    fun movieDetail() = coroutine(_movieDetail) {
         repository.movieDetail(idMovie)
     }
 
-    fun castMovie() = makeAsyncOperation(_cast) {
+    fun castMovie() = coroutine(_cast) {
         repository.movieCast(idMovie)
     }
 
-    fun similarMovies() = makeAsyncOperation(_similarMovies) {
+    fun similarMovies() = coroutine(_similarMovies) {
         repository.similarMovies(idMovie)
     }
 
-    fun insertWish(imageInfo: ImageInfo) = makeAsyncOperation {
+    fun insertWish(imageInfo: ImageInfo) = coroutine {
         libraryRepository.insertWish(imageInfo.toTableWish(ImageInfoType.MOVIE))
     }
 
-    fun deleteWish() = makeAsyncOperation {
+    fun deleteWish() = coroutine {
         libraryRepository.deleteWish(idMovie)
     }
 
-    fun insertFavorite(imageInfo: ImageInfo) = makeAsyncOperation {
+    fun insertFavorite(imageInfo: ImageInfo) = coroutine {
         libraryRepository.insertFavorite(imageInfo.toTableFavorite(ImageInfoType.MOVIE))
     }
 
-    fun deleteFavorite() = makeAsyncOperation {
+    fun deleteFavorite() = coroutine {
         libraryRepository.deleteFavorite(idMovie)
     }
 
-    fun isWish() = makeAsyncOperation(wish) {
+    fun isWish() = coroutine(wish) {
         libraryRepository.getWish(idMovie).isNotEmpty()
     }
 
-    fun isFavorite() = makeAsyncOperation(favorite) {
+    fun isFavorite() = coroutine(favorite) {
         libraryRepository.getFavorite(idMovie).isNotEmpty()
     }
 }
